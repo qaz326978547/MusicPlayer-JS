@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    <link rel="shortcut icon" href="#">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/all.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- * 資料夾中的影片從這個地方取得
+            https://www.pexels.com/zh-tw/video/4493603/ -->
+
+    <!-- 10. 透過 <video> 載入一個影片 -->
+    <!--    * 不指定 controls 屬性，稍後透過按鈕控制 -->
+    <!--    * #myVideo -->
+
+    <!-- 20. 設計三個按鈕，分別用於控制影片播放、影片靜音和影片全螢幕 -->
+    <!--    * #btnPlay 、 #btnMute 、 #btnFullScreen -->
+
+    <!-- 35. 透過 <progress>  顯示|控制影片進度 -->
+
+    <!-- <video width="100%" id="myVideo" src="./production ID_4493603.mp4"></video> -->
+    <div class="container " id="MusicPlayer-Wrap">
+        <div id="audio" class="audio row jcc"></div>
+    </div>
+    <div class="mb-5 musicp-control-wrap">
+        <div class="time-wrap">
+            <p id="nowTime" class="nowTime">0:00</p>
+            <p id="totalTime" class="totalTime">0:00</p>
+        </div>
+
+
+        <progress id="videoProgress" class="progress" min="0" max="100" value="0"></progress>
+        <br>
+
+        <!-- 播放 -->
+        <div class="control-wrap row">
+            <div class="col-4 control-data" id="control">
+
+            </div>
+            <div class="button-control col-4">
+                <button id="btnBack" class="btn"><img src="./icon/backward-step-solid 1.png" alt=""></button>
+                <button id="btnPlay" class="btn "><img id="play" src="./icon/Vector.png" alt=""></button>
+                <button id="btnNext" class="btn"><img src="./icon/forward-step-solid 1.png" alt=""></button>
+            </div>
+            <div class="volume-control col-4">
+                <button id="btnRandom" class="btn btnRandom me-3"><img id="random" src="./icon/shuffle-solid 1.png"
+                        alt=""></button>
+                <label for="inputVolume"><img id="volume" src="./icon/volume-low-solid.png" alt=""></label>
+                <input type="range" id="inputVolume" class="inputVolume" min="0" max="1" step="0.1" value="0.5">
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr>
+
+    <!-- 30. 透過 <input type="range">  控制聲音大小 -->
+    <br>
+
+    <!-- 32. 透過 <input type="number"> 控制播放倍速 -->
+    <label for="inputRate"></label>
+    <input type="hidden" id="inputRate" value="1" min="0.5" max="2" step="0.5">
+    <hr>
+
+
+
+
+    <style>
+        progress {
+            width: 100%;
+            /* height: 5px;
+            color: #f00;
+            background: black;
+            border-radius: 0.1rem; */
+
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script src="./style/all.js"></script>
+</body>
+
+</html>
